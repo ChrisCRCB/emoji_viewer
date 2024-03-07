@@ -1,10 +1,12 @@
 import 'dart:convert';
 
+import 'package:backstreets_widgets/util.dart';
 import 'package:backstreets_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../../../gen/assets.gen.dart';
 import '../../json/emoticon_group.dart';
+import '../../screens/emoticon_group_screen.dart';
 
 /// The tab for showing emoticons.
 class EmoticonsTab extends StatelessWidget {
@@ -24,12 +26,20 @@ class EmoticonsTab extends StatelessWidget {
         builder: (final searchableListViewContext, final index) {
           final group = groups[index];
           return SearchableListTile(
-            searchString: group.group,
+            searchString: [
+              group.group,
+              ...group.emoticon.map((final e) => e.value),
+            ].join(),
             child: ListTile(
               autofocus: index == 0,
               title: Text(group.group),
               subtitle: Text(group.emoticon.length.toString()),
-              onTap: () {},
+              onTap: () => pushWidget(
+                context: context,
+                builder: (final context) => EmoticonGroupScreen(
+                  emoticonGroup: group,
+                ),
+              ),
             ),
           );
         },
