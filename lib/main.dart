@@ -28,14 +28,14 @@ class MyApp extends StatelessWidget {
             return TabbedScaffold(
               tabs: [
                 TabbedScaffoldTab(
-                  title: 'Emoticons',
-                  icon: const Text('Classic MSN-style emoticons'),
-                  builder: (final context) => const EmoticonsTab(),
-                ),
-                TabbedScaffoldTab(
                   title: 'Emoji',
                   icon: const Text('Modern emoji'),
                   builder: (final context) => const EmojiTab(),
+                ),
+                TabbedScaffoldTab(
+                  title: 'Emoticons',
+                  icon: const Text('Classic MSN-style emoticons'),
+                  builder: (final context) => const EmoticonsTab(),
                 ),
               ],
             );
