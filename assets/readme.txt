@@ -1,0 +1,1 @@
+Data copied from https://github.com/googlefonts/emoji-metadata

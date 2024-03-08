@@ -9,42 +9,14 @@
 
 import 'package:flutter/widgets.dart';
 
-class $EmojiMetadataGen {
-  const $EmojiMetadataGen();
-
-  /// File path: emoji-metadata/emoji_13_0_ordering.json
-  String get emoji130Ordering => 'emoji-metadata/emoji_13_0_ordering.json';
-
-  /// File path: emoji-metadata/emoji_13_1_ordering.json
-  String get emoji131Ordering => 'emoji-metadata/emoji_13_1_ordering.json';
-
-  /// File path: emoji-metadata/emoji_14_0_ordering.json
-  String get emoji140Ordering => 'emoji-metadata/emoji_14_0_ordering.json';
-
-  /// File path: emoji-metadata/emoji_15_0_ordering.json
-  String get emoji150Ordering => 'emoji-metadata/emoji_15_0_ordering.json';
-
-  /// File path: emoji-metadata/emoji_15_1_ordering.json
-  String get emoji151Ordering => 'emoji-metadata/emoji_15_1_ordering.json';
-
-  /// File path: emoji-metadata/emoticon_ordering.json
-  String get emoticonOrdering => 'emoji-metadata/emoticon_ordering.json';
-
-  /// List of all assets
-  List<String> get values => [
-        emoji130Ordering,
-        emoji131Ordering,
-        emoji140Ordering,
-        emoji150Ordering,
-        emoji151Ordering,
-        emoticonOrdering
-      ];
-}
-
 class Assets {
   Assets._();
 
-  static const $EmojiMetadataGen emojiMetadata = $EmojiMetadataGen();
+  static const String emoji151Ordering = 'assets/emoji_15_1_ordering.json';
+  static const String emoticonOrdering = 'assets/emoticon_ordering.json';
+
+  /// List of all assets
+  List<String> get values => [emoji151Ordering, emoticonOrdering];
 }
 
 class AssetGenImage {

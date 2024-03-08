@@ -56,8 +56,7 @@ class EmojiTab extends StatelessWidget {
   /// Get the emoticons.
   Future<List<EmojiGroup>> getEmoji(final BuildContext context) async {
     final bundle = DefaultAssetBundle.of(context);
-    final string =
-        await bundle.loadString(Assets.emojiMetadata.emoji151Ordering);
+    final string = await bundle.loadString(Assets.emoji151Ordering);
     final json = jsonDecode(string) as List<dynamic>;
     return json
         .map(

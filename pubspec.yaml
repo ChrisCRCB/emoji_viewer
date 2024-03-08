@@ -26,9 +26,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - emoji-metadata/emoji_13_0_ordering.json
-    - emoji-metadata/emoji_13_1_ordering.json
-    - emoji-metadata/emoji_14_0_ordering.json
-    - emoji-metadata/emoji_15_0_ordering.json
-    - emoji-metadata/emoji_15_1_ordering.json
-    - emoji-metadata/emoticon_ordering.json
+    - assets/emoji_15_1_ordering.json
+    - assets/emoticon_ordering.json
