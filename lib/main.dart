@@ -1,5 +1,6 @@
 import 'package:backstreets_widgets/screens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import 'src/widgets/tabs/emoji_tab.dart';
 import 'src/widgets/tabs/emoticons_tab.dart';
@@ -21,19 +22,24 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: TabbedScaffold(
-          tabs: [
-            TabbedScaffoldTab(
-              title: 'Emoticons',
-              icon: const Text('Classic MSN-style emoticons'),
-              builder: (final context) => const EmoticonsTab(),
-            ),
-            TabbedScaffoldTab(
-              title: 'Emoji',
-              icon: const Text('Modern emoji'),
-              builder: (final context) => const EmojiTab(),
-            ),
-          ],
+        home: Builder(
+          builder: (final context) {
+            RendererBinding.instance.ensureSemantics();
+            return TabbedScaffold(
+              tabs: [
+                TabbedScaffoldTab(
+                  title: 'Emoticons',
+                  icon: const Text('Classic MSN-style emoticons'),
+                  builder: (final context) => const EmoticonsTab(),
+                ),
+                TabbedScaffoldTab(
+                  title: 'Emoji',
+                  icon: const Text('Modern emoji'),
+                  builder: (final context) => const EmojiTab(),
+                ),
+              ],
+            );
+          },
         ),
       );
 }
