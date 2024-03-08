@@ -18,7 +18,11 @@ class EmojiScreen extends StatelessWidget {
   /// Build the widget.
   @override
   Widget build(final BuildContext context) {
-    final alternates = emoji.alternates.map(String.fromCharCodes).toList();
+    final alternates = emoji.alternates.map((final e) {
+      final string = String.fromCharCodes(e);
+      return '$string (${e.join(' + ')})';
+    }).toList();
+    final base = String.fromCharCodes(emoji.base);
     return Cancel(
       child: SimpleScaffold(
         title: 'Emoji',
@@ -32,7 +36,7 @@ class EmojiScreen extends StatelessWidget {
             ),
             CopyListTile(
               title: 'Base emoji',
-              subtitle: String.fromCharCodes(emoji.base),
+              subtitle: '$base (${emoji.base.join(' + ')})',
             ),
             for (var i = 0; i < alternates.length; i++)
               CopyListTile(
